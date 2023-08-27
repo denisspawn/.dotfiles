@@ -1,0 +1,2 @@
+exec xmonad
+#exec dwm
