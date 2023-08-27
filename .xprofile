@@ -1,0 +1,108 @@
+#Xorg compositors are prone to show issues with Nouveau.
+#picom -b --unredir-if-possible --vsync --use-damage --glx-no-stencil
+picom -b
+
+#Changing resolution and refrash rate
+xrandr --rate 165
+
+#для корректной работы нужно установить следующие пакеты xxkb
+setxkbmap -model pc105 -layout us,ru -option grp:caps_toggle, grp_led:scroll &
+
+#system tray
+# перенес в xmonad.hs
+#trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 5 --transparent true --tint 0x5f5f5f --height 20 &
+
+yandex-disk-indicator &
+
+nitrogen --restore &
+#feh --bg-scale --randomize ~/.wallpaper/* &
+#volume applet
+pasystray &
+
+#bluetooth applet
+blueman-applet &
+
+#without systemd, the pulse audio daemon can be started with
+pulseaudio &
+
+numlockx &
+
+# locks the screen after 10 min. (pkg install xautolock slock)
+#xautolock -time 10 -locker slock & 
+
+# this is necessary for pycharm to work in dwm window manager
+# and another IDE from JetBrains
+#export _JAVA_AWT_WM_NONREPARENTING=1
+
+#dwm_alsa () {
+#  VOL=$(mixer vol | cut -f2 -d':')
+#  printf "%s" "["
+#  if [ "$IDENTIFIER" = "unicode" ]; then
+#      if [ "$VOL" -eq 0 ]; then
+#          printf "🔇"
+#      elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
+#          printf "🔈 %s%%" "$VOL"
+#      elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
+#          printf "🔉 %s%%" "$VOL"
+#      else
+#          printf "🔊 %s%%" "$VOL"
+#      fi
+#  else
+#      if [ "$VOL" -eq 0 ]; then
+#          printf "MUTE"
+#      elif [ "$VOL" -gt 0 ] && [ "$VOL" -le 33 ]; then
+#          printf "VOL %s%%" "$VOL"
+#      elif [ "$VOL" -gt 33 ] && [ "$VOL" -le 66 ]; then
+#          printf "VOL %s%%" "$VOL"
+#      else
+#          printf "VOL %s%%" "$VOL"
+#      fi
+#  fi
+#  printf "%s\n" "]"
+#}
+
+#while true; do
+#  xsetroot -name "$(dwm_keyboard) | $(dwm_alsa) | $(date +"%d/%m/%y") | $(date +"%h:%m")"
+#  sleep 1
+#done &
+
+# Loop for restart dwm 
+#while true; do
+#  dwm >/dev/null 2>&1
+#  sleep 1
+#done &
+
+#dwm_keyboard () {
+#    CODE=$(xset -q | grep LED | awk '{ print $10 }') 
+#
+#    if [ ${CODE} -eq 00000002 ] 
+#    then
+#        echo "en" 
+#    elif [ ${CODE} -eq 00001002 ]
+#    then
+#        echo "ru"
+#    elif [ ${CODE} -eq 00000003 ]
+#    then
+#        echo "EN"
+#    elif [ ${CODE} -eq 00001003 ]
+#    then
+#        echo "RU"
+#    elif [ ${CODE} -eq 00000000 ]
+#    then
+#        echo "en"
+#    elif [ ${CODE} -eq 00001000 ]
+#    then
+#        echo "ru"
+#    elif [ ${CODE} -eq 00000001 ]
+#    then
+#        echo "EN"
+#    elif [ ${CODE} -eq 00001001 ]
+#    then
+#        echo "RU"
+#    fi
+#}
+#
+#while true; do
+#  xsetroot -name ""["$(dwm_keyboard)"]" "["$(date +"%d.%m.%Y")"]" "["$(date +"%H:%M")"]""
+#  sleep 1
+#done &
