@@ -109,4 +109,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
-alias config='/usr/bin/git --git-dir=/home/vect0r/.cfg/ --work-tree=/home/vect0r' # Added for Bare repository to manage .dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME' # Added for Bare repository to manage .dotfiles
