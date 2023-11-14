@@ -59,6 +59,14 @@ lspconfig.lua_ls.setup({
 	},
 })
 
+lspconfig.astro.setup({})
+-- lspconfig.astro.setup({
+-- 	filetypes = { "astro" },
+-- 	init_options = {
+-- 		javascript = {},
+-- 	},
+-- })
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)

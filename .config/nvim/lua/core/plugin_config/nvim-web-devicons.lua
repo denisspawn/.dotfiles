@@ -34,6 +34,11 @@ web_devicons.setup({
 			color = "#f1502f",
 			name = "Gitignore",
 		},
+		[".prettierrc"] = {
+			icon = "",
+			color = "#EF8547",
+			name = "Astro",
+		},
 	},
 	-- same as `override` but specifically for overrides by extension
 	-- takes effect when `strict` is true
@@ -42,6 +47,11 @@ web_devicons.setup({
 			icon = "",
 			color = "#81e043",
 			name = "Log",
+		},
+		["astro"] = {
+			icon = "󱓟",
+			color = "#EF8547",
+			name = "Astro",
 		},
 	},
 })

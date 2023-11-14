@@ -62,15 +62,16 @@ local plugins = {
 		tag = "0.1.2",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
+	-- formatters
+	{
+		"mhartington/formatter.nvim",
+	},
 	-- lsp plugins
 	{
 		"williamboman/mason.nvim", -- portable package manager
 		dependencies = {
 			"williamboman/mason-lspconfig.nvim", -- configuration for mason-LSP
-			{
-				"jay-babu/mason-null-ls.nvim", -- configuration for mason-null-ls
-				event = { "BufReadPre", "BufNewFile" },
-			},
+			"WhoIsSethDaniel/mason-tool-installer.nvim", -- install or upgrade all of your third-party tools for mason
 		},
 	},
 }

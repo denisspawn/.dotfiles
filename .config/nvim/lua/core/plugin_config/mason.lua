@@ -3,21 +3,24 @@ if not status then
 	return
 end
 
-local status_lspconf, mason_lspconfig = pcall(require, "mason-lspconfig")
-if not status_lspconf then
+local status_mason_tool_installer, mason_tool_installer = pcall(require, "mason-tool-installer")
+if not status_mason_tool_installer then
 	return
 end
 
-local status_null_ls, mason_null_ls = pcall(require, "mason-null-ls")
-if not status_null_ls then
-	return
-end
-
-mason.setup()
+mason.setup({
+	ui = {
+		icons = {
+			package_installed = "✓",
+			package_pending = "➜",
+			package_uninstalled = "✗",
+		},
+	},
+})
 
 -- after adding to the ensure_installed list
 -- we must activate server through nvim-lspcong.lua file
-mason_lspconfig.setup({
+mason_tool_installer.setup({
 	ensure_installed = {
 		"lua_ls",
 		"rust_analyzer",
@@ -26,11 +29,9 @@ mason_lspconfig.setup({
 		"stylelint_lsp",
 		"eslint",
 		"tsserver",
+		"emmet_language_server",
+		"prettier",
+		"stylua",
+		"astro",
 	},
-})
-
--- after adding to the ensure_installed list
--- we must activate linter through null-ls.lua file
-mason_null_ls.setup({
-	ensure_installed = { "prettierd", "stylua" },
 })
