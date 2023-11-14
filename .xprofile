@@ -1,6 +1,6 @@
 #Xorg compositors are prone to show issues with Nouveau.
-#picom -b --unredir-if-possible --vsync --use-damage --glx-no-stencil
-picom -b
+#picom -b
+xcompmgr -cf -C -t-5 -l-5 -r4.2 -o.55 -D3 &
 
 #Changing resolution and refrash rate
 xrandr --rate 165
@@ -28,7 +28,7 @@ pulseaudio &
 numlockx &
 
 # locks the screen after 10 min. (pkg install xautolock slock)
-#xautolock -time 10 -locker slock & 
+#xautolock -time 10 -locker slock &
 
 # this is necessary for pycharm to work in dwm window manager
 # and another IDE from JetBrains
@@ -66,18 +66,18 @@ numlockx &
 #  sleep 1
 #done &
 
-# Loop for restart dwm 
+# Loop for restart dwm
 #while true; do
 #  dwm >/dev/null 2>&1
 #  sleep 1
 #done &
 
 #dwm_keyboard () {
-#    CODE=$(xset -q | grep LED | awk '{ print $10 }') 
+#    CODE=$(xset -q | grep LED | awk '{ print $10 }')
 #
-#    if [ ${CODE} -eq 00000002 ] 
+#    if [ ${CODE} -eq 00000002 ]
 #    then
-#        echo "en" 
+#        echo "en"
 #    elif [ ${CODE} -eq 00001002 ]
 #    then
 #        echo "ru"
