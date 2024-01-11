@@ -74,6 +74,11 @@ local plugins = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim", -- install or upgrade all of your third-party tools for mason
 		},
 	},
+	--- instead typescript-language-server
+	{
+		"pmizio/typescript-tools.nvim",
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+	},
 }
 
 local opts = {}

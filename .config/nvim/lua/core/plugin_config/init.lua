@@ -1,4 +1,5 @@
 require("core.plugin_config.nvim-web-devicons") -- important keep it on the top
+require("core.plugin_config.typescript-tools")
 require("core.plugin_config.formatter")
 require("core.plugin_config.autosave")
 require("core.plugin_config.bufferline")

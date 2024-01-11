@@ -28,7 +28,6 @@ mason_tool_installer.setup({
 		"tailwindcss",
 		"stylelint_lsp",
 		"eslint",
-		"tsserver",
 		"emmet_language_server",
 		"prettier",
 		"stylua",

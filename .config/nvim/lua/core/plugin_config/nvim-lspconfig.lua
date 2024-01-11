@@ -6,21 +6,6 @@ end
 -- https://github.com/eslint/eslint
 -- npm init @eslint/config
 lspconfig.eslint.setup({})
-lspconfig.tsserver.setup({
-	init_options = {
-		preferences = {
-			-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-			-- https://github.com/typescript-language-server/typescript-language-server#workspacedidchangeconfiguration
-			-- Preferred style for JSX attribute completions:
-			-- `"auto"` - Insert `={}` or `=\"\"` after attribute names based on the prop type.
-			-- `"braces"` - Insert `={}` after attribute names.
-			-- `"none"` - Only insert attribute names.
-			jsxAttributeCompletionStyle = "none",
-		},
-	},
-})
--- emmet doesn't have his own name in Mason
--- it must be installed manually :MasonInstall emmet-language-server
 lspconfig.emmet_language_server.setup({})
 lspconfig.pyright.setup({})
 lspconfig.tailwindcss.setup({})
